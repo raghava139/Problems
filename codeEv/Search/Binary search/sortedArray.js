@@ -18,5 +18,10 @@ function sortedArray(arr,target){
     return -1
 }
 let arr=[-5,2,4,6,10]
-let target=6
+let target=10
 console.log(sortedArray(arr,target));
+
+
+// time complexity
+// Big-O = O(log n) means if input size reduced by half
+
