@@ -36,7 +36,6 @@ function countUniqueValues(arr){
   console.log(i+1);
   // console.log('i',i+1,'j',j);
   return i+1;
-
 }
 countUniqueValues([1,1,2,3,3,4,5,6,6,7])
 // countUniqueValues([])
