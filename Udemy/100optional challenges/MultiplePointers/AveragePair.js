@@ -26,3 +26,4 @@ function averagePair(arr, target) {
   return false;
 }
 averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19,50], 8);
+// binary Searching way using here
