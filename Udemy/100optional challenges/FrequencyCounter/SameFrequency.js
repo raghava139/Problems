@@ -10,6 +10,7 @@ function sameFrequency(string1, string2) {
   let secondString = `${string2}`;
   for (let x of firstString) {
     FirstObject[x] ? (FirstObject[x] += 1) : (FirstObject[x] = 1);
+    
   }
   for (let y of secondString) {
     SecondObject[y] ? (SecondObject[y] += 1) : (SecondObject[y] = 1);
