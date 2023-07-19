@@ -2,9 +2,18 @@
 // string and returns a new string in reverse
 
 // example
-// reverse('rithmschool') // 'loohcsmhtir'
+// reverse('awesome') // 'emosewa'
 
-function reverse(){
-    console.log('reverse-function');
+//functionality
+function reverse(stringValue){
+    console.log('reverse-function',stringValue.length);
+    
+    // Base Case
+    if(stringValue.length <=1 ){
+        return stringValue;
+    }
+
+    // recursive case
+    return stringValue.slice(-1) + reverse(stringValue.slice(0,-1));
 }
-reverse();
+console.log("value",reverse("awesome"));
