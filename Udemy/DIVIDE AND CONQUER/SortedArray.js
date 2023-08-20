@@ -23,7 +23,7 @@ function Search(arr,val){
     let max = arr.length-1;
      
     while(min <= max){
-        let middle = Math.floor((min+max)/2)
+        let middle = Math.floor((min+max)/2);
         let currentElement = arr[middle]
         
         if(arr[middle] < val){
