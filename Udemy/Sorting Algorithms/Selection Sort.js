@@ -37,3 +37,6 @@ function SelectionSort(arr) {
   return arr;
 }
 SelectionSort([34, 22, 10, 19, 17]);
+
+//Time Complexity
+//Big O(n^2)

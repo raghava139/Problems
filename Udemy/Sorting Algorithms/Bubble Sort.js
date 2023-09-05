@@ -83,3 +83,7 @@ function BubbleSort(arr) {
   return arr;
 }
 BubbleSort([8, 1, 2, 3, 4, 5, 6, 7]);
+
+
+//Time Complexity
+//Big O(n^2)
