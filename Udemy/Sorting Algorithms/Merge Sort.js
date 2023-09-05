@@ -1,4 +1,29 @@
-function MergeSort(){
-    console.log('mergeSort')
+function MergeSort(arr1,arr2){
+    console.log('mergeSort');
+
+    let results = [];
+    let i = 0;
+    let j = 0;
+
+    while(i<arr1.length && j<arr2.length){
+        if(arr2[j] > arr1[i]){
+            results.push(arr1[i]);
+            i++;
+        }
+        else{
+            results.push(arr2[j]);
+            j++;
+        }
+    }
+    while(i<arr1.length){
+        results.push(arr1[i]);
+        i++;
+    }
+    while(j<arr2.length){
+        results.push(arr2[j]);
+        j++;
+    }
+    console.log('results',results);
+    return results;
 }
-MergeSort();
+MergeSort([],[2,14,99,100]);
