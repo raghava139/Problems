@@ -26,4 +26,16 @@ function MergeSort(arr1,arr2){
     console.log('results',results);
     return results;
 }
-MergeSort([],[2,14,99,100]);
+// MergeSort([1,15,13],[2,14,99,100]);
+
+function MergeSortRecursive(arr){
+    if(arr.length <=1) return arr; 
+        let mid =Math.floor(arr.length/2);
+        let left = MergeSortRecursive(arr.slice(0,mid));
+        let right = MergeSortRecursive (arr.slice(mid));
+        return  MergeSort(left,right);
+}
+MergeSortRecursive([10,24,76,73]);
+
+//time complexity
+// O(n log n)
