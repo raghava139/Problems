@@ -63,14 +63,14 @@ let TestForReduce = [
 
 //without methods
 
-function basedOnLoop() {
-  let EmptyArray = [];
-  for (let i = 0; i < TestForReduce.length; i++) {
-    console.log(TestForReduce[i].age);
-    if (TestForReduce[i].age > 26) {
-      EmptyArray.push(TestForReduce[i]?.firstName);
-    }
-  }
-  return EmptyArray;
-}
-console.log(basedOnLoop());
+// function basedOnLoop() {
+//   let EmptyArray = [];
+//   for (let i = 0; i < TestForReduce.length; i++) {
+//     console.log(TestForReduce[i].age);
+//     if (TestForReduce[i].age > 26) {
+//       EmptyArray.push(TestForReduce[i]?.firstName);
+//     }
+//   }
+//   return EmptyArray;
+// }
+// console.log(basedOnLoop());
