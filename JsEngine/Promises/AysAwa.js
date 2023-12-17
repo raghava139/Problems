@@ -78,30 +78,30 @@
 // TestingAS();
 
 // 5. Error Handling
-async function HandlingErrors() {
-    try {
-        const waiting = await fetch('https://jsonplaceholder.typicode.com/users')
-        const waiting2 = await fetch('https://jsonplaceholder.typicode.com/todos')
-        const responseJson1 = await waiting.json();
-        const responseJson2 = await waiting2.json();
-        console.log('response1', responseJson1);
-        console.log('response2', responseJson2);
+// async function HandlingErrors() {
+//     try {
+//         const waiting = await fetch('https://jsonplaceholder.typicode.com/users')
+//         const waiting2 = await fetch('https://jsonplaceholder.typicode.com/todos')
+//         const responseJson1 = await waiting.json();
+//         const responseJson2 = await waiting2.json();
+//         console.log('response1', responseJson1);
+//         console.log('response2', responseJson2);
 
-      // destructuring single index of nested data
-        const [{address:{geo:myjio}}] = responseJson1;
-        console.log('single',myjio);
-       // destructuring Whole indexes of nested data
-        let staticdata = responseJson1?.map(({address:{geo:{lat:gear}}})=>gear)
-        // let staticdata = responseJson1?.map((hello)=>{
-        //     return hello?.address?.geo?.lat;
-        // })
-        console.log('whole',staticdata)
-    }
-    catch (err) {
-        console.log(err.message = "please solve this")
-    }
-}
-HandlingErrors();
+//       // destructuring single index of nested data
+//         const [{address:{geo:myjio}}] = responseJson1;
+//         console.log('single',myjio);
+//        // destructuring Whole indexes of nested data
+//         let staticdata = responseJson1?.map(({address:{geo:{lat:gear}}})=>gear)
+//         // let staticdata = responseJson1?.map((hello)=>{
+//         //     return hello?.address?.geo?.lat;
+//         // })
+//         console.log('whole',staticdata)
+//     }
+//     catch (err) {
+//         console.log(err.message = "please solve this")
+//     }
+// }
+// HandlingErrors();
 
 // 6. Interview Tips
 // Async is  a keyword it always returns a promise
