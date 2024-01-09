@@ -1,0 +1,23 @@
+virtual DOM:-
+---------------
+---> In React.js, the Virtual DOM (Document Object Model) is a concept and a technique used to improve the efficiency of updating the user interface (UI). 
+---> React maintains a representation of the actual DOM in memory, known as the Virtual DOM. Instead of directly updating the real DOM every time there is a change in the application state,
+---> React first updates the Virtual DOM.
+
+
+Diffing:-
+----------
+---> short for "difference reconciliation,"
+--->Diffing is the process of finding differences between two tree structures (old and new virtual DOM trees).
+
+
+Reconciliation:-
+---------------
+---> Reconciliation, in the context of React, is the process of updating the real DOM to reflect the changes identified during the diffing process.
+---> Reconciliation is the subsequent process of applying the identified differences to update the real DOM. 
+
+
+NOTE:-
+------
+Together, these processes enable React to efficiently manage and update the user interface, 
+ensuring that changes are reflected in the DOM with minimal performance overhead.
