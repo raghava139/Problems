@@ -11,7 +11,7 @@ Diffing:-
 --->Diffing is the process of finding differences between two tree structures (old and new virtual DOM trees).
 
 
-Reconciliation:-
+Reconciliation(settlement):-
 ---------------
 ---> Reconciliation, in the context of React, is the process of updating the real DOM to reflect the changes identified during the diffing process.
 ---> Reconciliation is the subsequent process of applying the identified differences to update the real DOM. 
