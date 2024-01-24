@@ -1,0 +1,32 @@
+1.Javascript Engine Works & Execute Context (codeEnv And MemoryEnv).
+2.Hoisting
+3.Window & This Keyword (GEC)
+4. Undefined vs not defined
+5. Scope Chain & Scope & Lexial Env
+6.temporal DEAD zone (let,const) (var)
+7. syntax Error Vs Reference Error VS typeError
+8. blockscope & Shadowing
+9. closures
+10. setTimeout Trust Issues
+11. Garbage Collecter
+12. First Class Functions
+13. function Statement VS function Declartion Vs Function Expression
+14. callback functions
+15.Event Loop
+16. JS RunTime Env (coding, parsing, compilation[JIT], execution)
+17. Higher Order Functions
+18. Callback Hell & Inversion Control
+19. promises
+20. promise chaining
+21. Async and Await
+22. promise Api calls --> 4 --> all, allsettled, race, any 
+23. Polyfill for bind  and polyfill
+24. Debounce vs Throttling
+25. Call Vs Apply Vs Bind
+26. Currying Functions
+27. Normal Vs Async Vs Defer
+28. Event Bubbling, Capturing Trickling
+29. Event Delegation
+30. Prototype and prototypal Inheritance
+31. Recursive functions
+32. Local Vs Session Vs Cookies
