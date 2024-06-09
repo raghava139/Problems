@@ -29,7 +29,6 @@ function betterExpensive() {
             },1000)
         }
     }
-
 }
 
 function testfunct(){

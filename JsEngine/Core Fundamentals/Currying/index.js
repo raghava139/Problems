@@ -48,7 +48,7 @@ function great1(){
     console.log('great');
 }
 let taketest = 'raghava'
-takeExampleSecond(2)(great1)(taketest);
+takeExampleSecond(2,12)(great1)(taketest);
 
 
 // function great1(){

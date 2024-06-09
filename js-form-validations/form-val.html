@@ -8,16 +8,52 @@
   <body>
     <div>
       <input type="text" id="myinput" />
-      <button type="submit" id="mybtn">submit</button><br>
-      <span style="color:red; display: none;">user is required</span>
+      <button type="button" id="mybtn">submit</button><br />
+      <span style="color: red; display: none" class="error_req"
+        >user is required</span>
     </div>
     <script>
-      var mybtn = document.getElementById("mybtn");
-      mybtn.addEventListener("click", () => {
-        var inputvalue = document.getElementById("myinput").value;
-        console.log("inputvalue", inputvalue);
+      function Validations(){
+        let InputValue1 = document.getElementById('myinput').value;
+        let errorField = document.querySelector('.error_req');
+        let isValid = true;
+        console.log('i',InputValue1);
+          if(InputValue1==""){
+            errorField.style.display = 'block';
+            isValid = false;
+          }else{
+            errorField.style.display = 'none';
+          }
+        return isValid;
+      }
 
-        // if()
+      
+      var mybtn = document.getElementById("mybtn");
+      mybtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let InputValue = document.getElementById('myinput').value;
+
+        let BestValid = Validations();
+        console.log('best-validations',BestValid);
+        if(BestValid){
+          console.log('true',InputValue)
+        }else{
+          console.log('checkTheValidations');
+        }
+
+      });
+
+      let myInput = document.querySelector("#myinput");
+      myInput.addEventListener("input", function (e) {
+        console.log("change", e.target.value);
+        let TargetedValue = e.target.value;
+        let BestValid = Validations();
+        console.log('best-validations',BestValid);
+        if(BestValid){
+          console.log('true-input-change',TargetedValue)
+        }else{
+          console.log('checkTheValidations');
+        }
       });
     </script>
   </body>
