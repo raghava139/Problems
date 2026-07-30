@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS Async Programming — Roadmap</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --card2:#1d2129; --border:#2a2f3a;
+    --text:#e8e9ec; --muted:#9aa0ab; --accent:#7c9eff; --accent2:#5ad1a8;
+    --warn:#f2a65a; --danger:#f2708a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.5; padding:32px 16px 80px;
+  }
+  h1{font-size:22px; font-weight:600; text-align:center; margin:0 0 4px;}
+  .sub{text-align:center; color:var(--muted); font-size:13px; margin-bottom:36px;}
+
+  /* Golden flow strip */
+  .flow{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:6px;
+    max-width:920px; margin:0 auto 48px; padding:16px;
+    background:var(--card); border:1px solid var(--border); border-radius:12px;
+  }
+  .flow span{
+    font-size:11px; padding:6px 10px; border-radius:20px;
+    background:var(--card2); color:var(--muted); border:1px solid var(--border);
+    white-space:nowrap;
+  }
+  .flow .arrow{color:var(--accent); font-size:11px; align-self:center;}
+
+  /* Timeline */
+  .timeline{ position:relative; max-width:760px; margin:0 auto; }
+  .timeline::before{
+    content:""; position:absolute; left:19px; top:8px; bottom:8px;
+    width:2px; background:linear-gradient(var(--accent), var(--accent2));
+    opacity:.35;
+  }
+  .phase{ position:relative; padding-left:56px; margin-bottom:14px; }
+  .dot{
+    position:absolute; left:10px; top:14px; width:18px; height:18px;
+    border-radius:50%; background:var(--card2); border:2px solid var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    font-size:9px; color:var(--accent); font-weight:700;
+  }
+  details{
+    background:var(--card); border:1px solid var(--border); border-radius:10px;
+    overflow:hidden;
+  }
+  summary{
+    list-style:none; cursor:pointer; padding:14px 16px;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .title{font-size:14.5px; font-weight:600;}
+  summary .chev{color:var(--muted); font-size:12px; transition:transform .2s;}
+  details[open] summary .chev{transform:rotate(90deg);}
+  .body{ padding:0 16px 16px; color:var(--muted); font-size:13.5px;}
+  .body ul{margin:6px 0 12px 18px; padding:0;}
+  .body li{margin:3px 0;}
+  .body code, code{
+    background:var(--card2); border:1px solid var(--border); border-radius:5px;
+    padding:1px 6px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12.5px; color:var(--accent2);
+  }
+  pre{
+    background:var(--card2); border:1px solid var(--border); border-radius:8px;
+    padding:10px 12px; overflow-x:auto; font-size:12.5px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--text);
+  }
+  .mini-flow{
+    display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:8px 0 14px;
+  }
+  .mini-flow .step{
+    background:var(--card2); border:1px solid var(--border); border-radius:6px;
+    padding:5px 9px; font-size:12px;
+  }
+  .mini-flow .step.hi{border-color:var(--accent); color:var(--accent);}
+  .mini-flow .a{color:var(--muted); font-size:12px;}
+  .tag{
+    font-size:10px; padding:2px 8px; border-radius:20px; font-weight:600;
+    letter-spacing:.3px;
+  }
+  .tag.core{background:rgba(124,158,255,.15); color:var(--accent);}
+  .tag.problem{background:rgba(242,112,138,.15); color:var(--danger);}
+  .tag.solution{background:rgba(90,209,168,.15); color:var(--accent2);}
+  .tag.practice{background:rgba(242,166,90,.15); color:var(--warn);}
+
+  .interview{
+    max-width:760px; margin:40px auto 0; background:var(--card);
+    border:1px solid var(--border); border-radius:10px; padding:18px 20px;
+  }
+  .interview h2{font-size:15px; margin:0 0 10px;}
+  .interview ol{margin:0; padding-left:20px; color:var(--muted); font-size:13px;}
+  .interview li{margin:5px 0;}
+
+  footer{text-align:center; color:var(--muted); font-size:11px; margin-top:40px;}
+</style>
+</head>
+<body>
+
+<h1>JavaScript asynchronous programming</h1>
+<div class="sub">Roadmap · click any phase to expand</div>
+
+<div class="flow">
+  <span>Sync JS</span><span class="arrow">→</span>
+  <span>Callbacks</span><span class="arrow">→</span>
+  <span>Callback hell</span><span class="arrow">→</span>
+  <span>Inversion of control</span><span class="arrow">→</span>
+  <span>Promises</span><span class="arrow">→</span>
+  <span>Chaining</span><span class="arrow">→</span>
+  <span>Error handling</span><span class="arrow">→</span>
+  <span>Promise APIs</span><span class="arrow">→</span>
+  <span>Async/await</span><span class="arrow">→</span>
+  <span>Sequential/parallel</span><span class="arrow">→</span>
+  <span>try/catch/finally</span><span class="arrow">→</span>
+  <span>Real-world calls</span><span class="arrow">→</span>
+  <span>Interview prep</span>
+</div>
+
+<div class="timeline">
+
+  <div class="phase">
+    <div class="dot">1</div>
+    <details open>
+      <summary><span class="title">Phase 1 — JS fundamentals</span><span class="tag core">foundation</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <p>Everything async is built on these five pieces:</p>
+        <ul>
+          <li><b>Call stack</b> — where sync code executes, one frame at a time</li>
+          <li><b>Web APIs</b> — browser-provided (setTimeout, fetch, DOM events)</li>
+          <li><b>Callback queue</b> (task queue) — holds callbacks like setTimeout, DOM events</li>
+          <li><b>Microtask queue</b> — holds Promise callbacks, runs before the callback queue</li>
+          <li><b>Event loop</b> — moves tasks from queues to the call stack once it's empty</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">2</div>
+    <details>
+      <summary><span class="title">Phase 2 — Callbacks</span><span class="tag core">basics</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <p>A callback is a function passed into another function to be run later.</p>
+        <ul>
+          <li><b>Synchronous callback</b> — runs immediately, e.g. <code>array.map(fn)</code></li>
+          <li><b>Asynchronous callback</b> — runs later, after some event/timer/IO</li>
+        </ul>
+        <pre>setTimeout(() => {}, 1000);</pre>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">3</div>
+    <details>
+      <summary><span class="title">Phase 3 — Callback problems</span><span class="tag problem">problem</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <p><b>Callback hell</b> — nested callbacks that pyramid rightward:</p>
+        <div class="mini-flow">
+          <span class="step">login()</span><span class="a">↓</span>
+          <span class="step">getUser()</span><span class="a">↓</span>
+          <span class="step">getOrders()</span><span class="a">↓</span>
+          <span class="step">makePayment()</span>
+        </div>
+        <p>Symptoms: pyramid of doom, hard to read, hard to maintain.</p>
+        <p><b>Inversion of control</b> — you hand your callback to someone else's function and lose control over how/when/if it runs:</p>
+        <ul>
+          <li>called once (expected)</li>
+          <li>called multiple times (bug)</li>
+          <li>never called (bug)</li>
+          <li>trust issues with third-party APIs</li>
+        </ul>
+        <p style="color:var(--accent2)">→ This is exactly why Promises were introduced.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">4</div>
+    <details>
+      <summary><span class="title">Phase 4 — Promises</span><span class="tag solution">solution</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <p>A Promise is an object representing the eventual result of an async operation.</p>
+        <div class="mini-flow">
+          <span class="step hi">Pending</span><span class="a">→</span>
+          <span class="step">Fulfilled</span><span class="a">or</span>
+          <span class="step">Rejected</span>
+        </div>
+        <ul>
+          <li><code>resolve()</code> — fulfills the promise</li>
+          <li><code>reject()</code> — rejects the promise</li>
+          <li>Promise constructor — <code>new Promise((resolve, reject) => {...})</code></li>
+          <li>Creating vs. consuming promises</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">5</div>
+    <details>
+      <summary><span class="title">Phase 5 — Promise chaining</span><span class="tag core">pattern</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <div class="mini-flow">
+          <span class="step">Promise</span><span class="a">→</span>
+          <span class="step">.then()</span><span class="a">→</span>
+          <span class="step">.then()</span><span class="a">→</span>
+          <span class="step">.then()</span><span class="a">→</span>
+          <span class="step">.catch()</span>
+        </div>
+        <ul>
+          <li>Returning plain values passes them to the next <code>.then()</code></li>
+          <li>Returning a promise chains/waits for it before continuing</li>
+          <li><code>throw</code> inside <code>.then()</code> jumps straight to the nearest <code>.catch()</code></li>
+          <li>Error propagation — errors skip <code>.then()</code>s until caught</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">6</div>
+    <details>
+      <summary><span class="title">Phase 6 — Error handling in promises</span><span class="tag core">pattern</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><code>.catch()</code> — handles rejection anywhere upstream</li>
+          <li><code>throw new Error()</code> — inside a <code>.then</code> becomes a rejection</li>
+          <li>Rejection bubbles down the chain until a <code>.catch()</code> handles it</li>
+          <li><code>.finally()</code> — always runs, success or failure, no argument passed in</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">7</div>
+    <details>
+      <summary><span class="title">Phase 7 — Promise APIs</span><span class="tag core">must-know</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <p>For each, know: input, output, success behavior, failure behavior, return value, execution order.</p>
+        <ul>
+          <li><code>Promise.all()</code> — waits for all; rejects fast on first failure</li>
+          <li><code>Promise.race()</code> — settles as soon as the first promise settles (win or lose)</li>
+          <li><code>Promise.allSettled()</code> — waits for all, never rejects, gives status of each</li>
+          <li><code>Promise.any()</code> — resolves on first success; rejects only if all fail</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">8</div>
+    <details>
+      <summary><span class="title">Phase 8 — Async / await</span><span class="tag solution">syntax sugar</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li>An <code>async</code> function always returns a Promise</li>
+          <li><code>await</code> only works inside <code>async</code> functions</li>
+          <li><code>await</code> pauses only the current async function, not all of JS</li>
+          <li><code>await</code> does <b>not</b> block the JS thread</li>
+        </ul>
+        <p><b>Behind the scenes:</b> async/await is syntactic sugar over Promises — <code>await</code> works via promise continuations under the hood.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">9</div>
+    <details>
+      <summary><span class="title">Phase 9 — Sequential vs parallel execution</span><span class="tag practice">practice</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <p><b>Sequential</b> (each waits for the previous):</p>
+        <pre>await fetch(...)
+await fetch(...)
+await fetch(...)</pre>
+        <p><b>Parallel</b> (fire all, then wait):</p>
+        <pre>const p1 = fetch(...)
+const p2 = fetch(...)
+const p3 = fetch(...)
+
+await p1
+await p2
+await p3</pre>
+        <p>Or use <code>Promise.all([p1, p2, p3])</code>. Use sequential when calls depend on each other; parallel when they're independent.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">10</div>
+    <details>
+      <summary><span class="title">Phase 10 — Error handling with async/await</span><span class="tag core">pattern</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <pre>try {
+  ...
+} catch (err) {
+  ...
+} finally {
+  ...
+}</pre>
+        <ul>
+          <li><code>try</code> — code that might throw</li>
+          <li><code>catch</code> — handles the error</li>
+          <li><code>finally</code> — always runs</li>
+          <li><code>throw</code> / rethrowing — propagate an error further up</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">11</div>
+    <details>
+      <summary><span class="title">Phase 11 — Real-world API calls</span><span class="tag practice">applied</span><span class="chev">▶</span></summary>
+      <div class="body">
+        <p><b>Dependent APIs</b> — each needs the previous result → sequential:</p>
+        <div class="mini-flow">
+          <span class="step">Login</span><span class="a">↓</span>
+          <span class="step">Profile</span><span class="a">↓</span>
+          <span class="step">Orders</span><span class="a">↓</span>
+          <span class="step">Payment</span>
+        </div>
+        <p><b>Independent APIs</b> — no relation to each other → parallel with <code>Promise.all()</code>:</p>
+        <div class="mini-flow">
+          <span class="step">User</span>
+          <span class="step">Products</span>
+          <span class="step">Notifications</span>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="phase">
+    <div class="dot">12</div>
+    <details>
+      <summary><span class="title">Phase 12 — Interview questions</span><span class="tag danger" style="background:rgba(242,112,138,.15);color:var(--danger)">recall</span><span class="chev">▶</span></summary>
+      <div class="body">Open the box below for the full list.</div>
+    </details>
+  </div>
+
+</div>
+
+<div class="interview">
+  <h2>Interview question bank</h2>
+  <ol>
+    <li>Why async/await over <code>.then()</code>?</li>
+    <li>Does async create a new thread?</li>
+    <li>Does await block JavaScript?</li>
+    <li>Does await start a Promise?</li>
+    <li>Difference between Promise and async/await?</li>
+    <li>Difference between synchronous and asynchronous?</li>
+    <li>Difference between concurrency and parallelism?</li>
+    <li>Promise vs callback?</li>
+    <li><code>Promise.all</code> vs <code>Promise.allSettled</code>?</li>
+    <li><code>Promise.any</code> vs <code>Promise.race</code>?</li>
+    <li>Sequential vs parallel — when to use each?</li>
+    <li>Best practice for multiple API calls?</li>
+    <li>Why was Promise introduced? What problem does it solve?</li>
+    <li>What problem does async/await solve?</li>
+  </ol>
+</div>
+
+<footer>Saved for future revision · JS async roadmap</footer>
+
+</body>
+</html>
